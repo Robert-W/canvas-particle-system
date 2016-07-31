@@ -1,0 +1,40 @@
+.animation-toggle {
+  box-shadow: 2px 2px 2px $chicago-gray;
+  border: 1px solid $chicago-gray;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+  background: white;
+  padding: 5px;
+
+  &:active {
+    box-shadow: 1px 1px 2px $chicago-gray;
+  }
+}
+
+.animation-toggle__start {
+  border-color: transparent transparent transparent $chicago-gray;
+  border-width: 8px 0 8px 10px;
+  border-style: solid;
+  background: none;
+}
+
+.animation-toggle__stop {
+  background: $chicago-gray;
+  height: 13px;
+  width: 13px;
+}
+
+.animation-toggle__label {
+  padding: 0 10px;
+}
+
+.dark {
+  .animation-toggle {
+    box-shadow: 2px 2px 2px black;
+
+    &:active {
+      box-shadow: 1px 1px 2px black;
+    }
+  }
+}

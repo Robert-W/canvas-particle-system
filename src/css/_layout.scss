@@ -1,0 +1,50 @@
+html,
+body,
+#react-mount,
+.app {
+  font-family: Roboto, sans-serif;
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.app.dark {
+  background: $chicago-gray;
+}
+
+.app__header {
+  text-align: center;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.app__canvas {
+  border-top: 1px solid $chicago-gray;
+  padding: 20px 0;
+
+  canvas {
+    transform: translate(-50%);
+    position: absolute;
+    height: 400px;
+    width: 600px;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.app_controls {
+  justify-content: space-between;
+  display: flex;
+  padding: 20px;
+}
+
+.dark  {
+  .app__header {
+    color: white;
+  }
+  .app__canvas {
+    border-top: 1px solid white;
+  }
+}
