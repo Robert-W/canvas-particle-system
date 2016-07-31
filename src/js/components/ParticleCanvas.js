@@ -43,7 +43,7 @@ export default class ParticleCanvas extends Component {
     }
   }
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate (prevProps: ParticleCanvasProps) {
     const {particle, isPlaying} = this.props;
     //- Only update the canvas if the value has been updated
     //- Or if the isPlaying has been updated and is true

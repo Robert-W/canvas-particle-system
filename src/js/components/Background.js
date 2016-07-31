@@ -20,7 +20,7 @@ export default class Background extends Component {
     this.setBackgroundColor();
   }
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate (prevProps: BackgroundProps) {
     const {mode} = this.props;
     //- Only update the canvas if the value has been updated
     if (prevProps.mode !== mode) {

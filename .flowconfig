@@ -3,8 +3,8 @@ src/**/*.js
 [ignore]
 .*/node_modules/fbjs/.*
 .*/node_modules/madge/.*
-#[libs]
-#declarations
+[libs]
+declarations
 [options]
 module.name_mapper='js'->'<PROJECT_ROOT>/src/js/'
 module.name_mapper='libs'->'<PROJECT_ROOT>/build/libs/'

@@ -2,6 +2,14 @@
 /**
 * Class representing the minimum properties needed for a particle
 */
+
+type ParticleProps = {
+  x: number,
+  y: number,
+  vx: number,
+  vy: number
+};
+
 export default class ParticleBase {
   /**
   * Types for this class
@@ -19,7 +27,7 @@ export default class ParticleBase {
   * @param {number=} props.vx - Starting x velocity
   * @param {number=} props.vy - Starting y velocity
   */
-  constructor (props) {
+  constructor (props: ParticleProps) {
     this.x = props.x || 0;
     this.y = props.y || 0;
     //- These should be between 2 and 5 if not provided
