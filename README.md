@@ -3,6 +3,7 @@
 
 ### Getting started
 This project reuires [Node.js](https://nodejs.org/en/) to be installed. Once you clone the project, do the following:
+
 1. Install dependencies via `npm install`.
 2. Start the dev task with `npm start`.
 3. Open your browser at `http://localhost:3000`. If port 3000 is in use, add `PORT=3001` to the beginning of the start script in the package.json or some other available port.
