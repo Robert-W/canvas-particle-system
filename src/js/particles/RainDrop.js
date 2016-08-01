@@ -1,5 +1,7 @@
 /* @flow */
 import ParticleBase from './ParticleBase';
+// Type Import
+import type {DrawOptions} from './ParticleTypes';
 
 export default class RainDrop extends ParticleBase {
   //- Types specific to the RainDrop class, remaining types defined in ParticleBase
@@ -11,7 +13,7 @@ export default class RainDrop extends ParticleBase {
     //- Set some defaults for values that make sense for a raindrop
     props.y = 0;
     //- Place it at a random location along the xAxis
-    props.x = Math.floor((Math.random() * (canvasWidth + 100)) - 100);
+    props.x = Math.floor((Math.random() * (canvasWidth + 150)) - 150);
     //- Give the rainsdrops a slight slant as they fall
     props.vx = 2;
     //- Give the raindrops a varying velocity
@@ -29,10 +31,11 @@ export default class RainDrop extends ParticleBase {
   * Override the draw method
   * @param {context} ctx - Canvas Context that the rain drop belongs to
   */
-  draw (ctx: any) {
+  draw (options: DrawOptions) {
+    const {ctx, windy} = options;
     ctx.fillRect(this.x, this.y, this.width, this.height);
     this.y += this.vy;
-    this.x += this.vx;
+    this.x += windy ? (this.vx * 1.5) : this.vx;
   }
 
 }

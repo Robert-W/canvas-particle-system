@@ -1,5 +1,7 @@
 /* @flow */
 import ParticleBase from './ParticleBase';
+// Type Import
+import type {DrawOptions} from './ParticleTypes';
 
 export default class SnowFlake extends ParticleBase {
   //- Types specific for a snow flake
@@ -10,7 +12,7 @@ export default class SnowFlake extends ParticleBase {
     //- Defaults for our flake
     props.y = 0;
     //- Random location along x axis
-    props.x = Math.floor((Math.random() * (canvasWidth + 100)) - 100);
+    props.x = Math.floor((Math.random() * (canvasWidth + 150)) - 150);
     //- Give it a small y velocity and stornger x velocity as it is more susceptible to wind and falls slower
     //- Also multiply by a value -1, 0, or 1 since the snowflake could fall either way, unless its windy
     props.vx = Math.floor((Math.random() * 1) + 1) * Math.floor((Math.random() * 2) - 1);
@@ -23,14 +25,15 @@ export default class SnowFlake extends ParticleBase {
   /**
   * Override the draw method
   */
-  draw (ctx: any) {
+  draw (options: DrawOptions) {
+    const {ctx, windy} = options;
     //- Make a simple circle
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.diameter / 2, 0, Math.PI * 2);
     ctx.closePath();
     ctx.fill();
     this.y += this.vy;
-    this.x += this.vx;
+    this.x += windy ? (this.vx * 2) : this.vx;
   }
 
 }

@@ -6,7 +6,8 @@ import {PARTICLES} from 'js/constants';
 
 type ParticleCanvasProps = {
   isPlaying: boolean,
-  particle: string
+  particle: string,
+  isWindy: boolean
 };
 
 //- Place to store all my raindrops
@@ -15,7 +16,7 @@ const raindrops = [],
 
 const SETTINGS = {
   //- How many rain particles do I add for each rendering loop
-  raindropCount: 10,
+  raindropCount: 14,
   rainColor: 'rgba(0, 112, 193, 0.65)',
   //- How many snow particles for each loop
   snowflakeCount: 5,
@@ -45,9 +46,8 @@ export default class ParticleCanvas extends Component {
 
   componentDidUpdate (prevProps: ParticleCanvasProps) {
     const {particle, isPlaying} = this.props;
-    //- Only update the canvas if the value has been updated
-    //- Or if the isPlaying has been updated and is true
-    // if (prevProps.particle !== particle || (isPlaying !== prevProps.isPlaying && isPlaying)) {
+    //- Only update the canvas if isPlaying is true and either
+    //- the particle type changed or isPlaying changed from stopped
     if (isPlaying && (prevProps.particle !== particle || isPlaying !== prevProps.isPlaying)) {
       this.renderNewParticle();
     }
@@ -67,7 +67,7 @@ export default class ParticleCanvas extends Component {
   }
 
   renderRainDrops = () => {
-    const {particle, isPlaying} = this.props;
+    const {particle, isPlaying, isWindy} = this.props;
     let i = 0, end = SETTINGS.raindropCount, drop;
     //- Give the raindrop the width of the canvas so it can give it a good starting x coord
     for (; i <= end; ++i) {
@@ -82,7 +82,7 @@ export default class ParticleCanvas extends Component {
     end = 0;
     for (; i > end; --i) {
       drop = raindrops[i];
-      drop.draw(this.ctx);
+      drop.draw({ ctx: this.ctx, windy: isWindy });
       if (drop.y + drop.height > this.height) {
         raindrops.splice(i, 1);
       }
@@ -95,7 +95,7 @@ export default class ParticleCanvas extends Component {
   };
 
   renderSnowFlakes = () => {
-    const {particle, isPlaying} = this.props;
+    const {particle, isPlaying, isWindy} = this.props;
     let i = 0, end = SETTINGS.snowflakeCount, flake;
     //- Give the snowflake the width of the canvas so it can give it a good starting x coord
     for (; i <= end; ++i) {
@@ -110,9 +110,9 @@ export default class ParticleCanvas extends Component {
     end = 0;
     for (; i > end; --i) {
       flake = snowflakes[i];
-      flake.draw(this.ctx);
+      flake.draw({ ctx: this.ctx, windy: isWindy });
       if (flake.y + flake.diameter > this.height) {
-        snowflakes.slice(i, 1);
+        snowflakes.splice(i, 1);
       }
     }
 

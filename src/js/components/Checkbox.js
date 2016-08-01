@@ -2,10 +2,10 @@
 import React, {Component} from 'react';
 
 type CheckboxProps = {
-  value: string,
   label: string,
   checked: boolean,
-  onChange: Function
+  onChange: Function,
+  value: ?string
 };
 
 export default class Checkbox extends Component {
