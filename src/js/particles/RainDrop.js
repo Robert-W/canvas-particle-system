@@ -3,6 +3,11 @@ import ParticleBase from './ParticleBase';
 // Type Import
 import type {DrawOptions} from './ParticleTypes';
 
+/**
+* RainDrop particle class
+* This should be created for each raindrop and can be drawn with the draw method
+* See src/js/components/ParticleCanvas for implementation
+*/
 export default class RainDrop extends ParticleBase {
   //- Types specific to the RainDrop class, remaining types defined in ParticleBase
   height: number;

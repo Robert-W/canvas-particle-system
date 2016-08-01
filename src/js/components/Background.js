@@ -11,6 +11,10 @@ const COLORS = {};
 COLORS[VIEW_MODE.light] = 'rgba(221, 221, 221, 0.85)';
 COLORS[VIEW_MODE.dark] = 'rgba(51, 51, 51, 0.85)';
 
+/**
+* Background Canvas, It's a good idea to have a separate background canvas so I can manipulate the background
+* and the particles in the foreground separate of each other
+*/
 export default class Background extends Component {
 
   displayName: 'Background';

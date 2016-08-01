@@ -8,11 +8,17 @@ type CheckboxProps = {
   value: ?string
 };
 
+/**
+* Simple checkbox class
+*/
 export default class Checkbox extends Component {
 
   displayName: 'Checkbox';
   props: CheckboxProps;
 
+  /**
+  * Callbacks should be bound here and not in the render function, this saves a function allocation on each render
+  */
   change = () => {
     const {value, onChange} = this.props;
     //- Pass the value back to the callback so I can turn on the correct checkbox

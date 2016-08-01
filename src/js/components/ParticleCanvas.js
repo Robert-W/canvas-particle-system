@@ -23,6 +23,10 @@ const SETTINGS = {
   snowColor: 'rgb(255, 255, 255)'
 };
 
+/**
+* This is essentially my Particle controller, it listens for UI changes and then renders the appropriate
+* particles, stops the animation, or can add environmental factors to them
+*/
 export default class ParticleCanvas extends Component {
 
   displayName: 'ParticleCanvas';

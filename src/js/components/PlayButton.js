@@ -12,6 +12,9 @@ const LABELS = {
   stop: 'Stop'
 };
 
+/**
+* Class to start/stop the particle animation
+*/
 export default class PlayButton extends Component {
 
   displayName: 'PlayButton';

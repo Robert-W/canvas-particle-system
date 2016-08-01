@@ -3,6 +3,11 @@ import ParticleBase from './ParticleBase';
 // Type Import
 import type {DrawOptions} from './ParticleTypes';
 
+/**
+* SnowFlake particle class
+* This should be created for each snowflake and can be drawn with the draw method
+* See src/js/components/ParticleCanvas for implementation
+*/
 export default class SnowFlake extends ParticleBase {
   //- Types specific for a snow flake
   diameter: number;
@@ -24,6 +29,9 @@ export default class SnowFlake extends ParticleBase {
 
   /**
   * Override the draw method
+  * @param {object} options - Set of options
+  * @param {context} options.ctx - Canvas Context that the rain drop belongs to
+  * @param {boolean} options.windy - Boolean indicating if there is wind
   */
   draw (options: DrawOptions) {
     const {ctx, windy} = options;

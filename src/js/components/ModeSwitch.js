@@ -9,6 +9,9 @@ type SwitchProps = {
 const sunIcon = '<use xlink:href="#sun-icon" />';
 const moonIcon = '<use xlink:href="#moon-icon" />';
 
+/**
+* Similar to checkbox, but instead of labels, has icons on each side of it
+*/
 export default class ModeSwitch extends Component {
 
   displayName: 'ModeSwitch';
