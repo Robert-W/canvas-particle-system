@@ -34,7 +34,9 @@ export default class RainDrop extends ParticleBase {
 
   /**
   * Override the draw method
-  * @param {context} ctx - Canvas Context that the rain drop belongs to
+  * @param {object} options - Set of options
+  * @param {context} options.ctx - Canvas Context that the rain drop belongs to
+  * @param {boolean} options.windy - Boolean indicating if there is wind
   */
   draw (options: DrawOptions) {
     const {ctx, windy} = options;
