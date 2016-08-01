@@ -22,7 +22,7 @@ export default class RainDrop extends ParticleBase {
     super(props);
     //- Give the raindrops a height and width, this should be a derivative of speed, faster raindrops should be bigger
     this.height = props.vy * 1.1;
-    this.width = props.vy / 2;
+    this.width = props.vy / 3;
   }
 
   /**

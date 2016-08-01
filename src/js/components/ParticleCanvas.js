@@ -47,7 +47,8 @@ export default class ParticleCanvas extends Component {
     const {particle, isPlaying} = this.props;
     //- Only update the canvas if the value has been updated
     //- Or if the isPlaying has been updated and is true
-    if (prevProps.particle !== particle || (isPlaying !== prevProps.isPlaying && isPlaying)) {
+    // if (prevProps.particle !== particle || (isPlaying !== prevProps.isPlaying && isPlaying)) {
+    if (isPlaying && (prevProps.particle !== particle || isPlaying !== prevProps.isPlaying)) {
       this.renderNewParticle();
     }
   }

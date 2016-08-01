@@ -10,7 +10,6 @@ import Checkbox from './Checkbox';
 //- Description of the state of our application
 type AppState = {
   isPlaying: boolean,
-  isWindy: boolean,
   particle: string,
   mode: string
 };
@@ -29,8 +28,7 @@ export default class App extends Component {
     this.state = {
       particle: PARTICLES.snow,
       mode: VIEW_MODE.light,
-      isPlaying: false,
-      isWindy: false
+      isPlaying: false
     };
   }
 

@@ -21,4 +21,8 @@ This project has webpack setup with an express server I wrote that uses Hot modu
 > Generates an optimized build with webpack.  It will output a minified js file with the hash in the name. It will also add the bundle's name to the HTML file so you don't need to do it manually. SASS get's compiled and inlined into the head so no blocking http requests are necessary on load.
 
 ### Purpose
-This app demonstrates some a particle system that has a few options. You can start or stop the animation, it is stopped by default.  You can also toggle the view mode to be light or dark, which will theme the app differently. Then there are two types of particles, snow and rain.  You can choose one of these two.
+This app demonstrates a particle system written on the canvas element. It has the following features:
+
+1. Start or Stop the animation. It is stopped by default.
+2. Toggle between Rain or Snow particles.
+3. Toggle the theme between the light and dark mode.

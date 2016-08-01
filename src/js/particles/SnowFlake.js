@@ -12,7 +12,7 @@ export default class SnowFlake extends ParticleBase {
     //- Random location along x axis
     props.x = Math.floor((Math.random() * (canvasWidth + 100)) - 100);
     //- Give it a small y velocity and stornger x velocity as it is more susceptible to wind and falls slower
-    //- Also multiple by a value -1, 0, or 1 since the snowflake could fall either way, unless its windy
+    //- Also multiply by a value -1, 0, or 1 since the snowflake could fall either way, unless its windy
     props.vx = Math.floor((Math.random() * 1) + 1) * Math.floor((Math.random() * 2) - 1);
     props.vy = Math.floor(Math.random() * 2) + 3; // 3 - 5
     super(props);
