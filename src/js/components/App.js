@@ -39,7 +39,6 @@ export default class App extends Component {
   };
 
   setParticle = (value: string) => {
-    //- If the user clicked the particle that is already on, then turn it off
     this.setState({ particle: value });
   };
 
